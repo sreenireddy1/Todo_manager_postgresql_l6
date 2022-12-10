@@ -55,7 +55,7 @@ describe("Todo Application", function () {
 
   test("Fetches all todos in the database using /todos endpoint", async () => {
     await agent.post("/todos").send({
-      title: "Buy xbox",
+      title: "Buy milk",
       dueDate: new Date().toISOString(),
       completed: false,
     });
