@@ -8,8 +8,7 @@
         <link href="./css/style.css" rel="stylesheet">
         <title>My Todo Manager</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link href="./css/style.css" rel="stylesheet">
-        <script>
+          <script>
           var token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
          function deleteATodo(id) {
         fetch(`/todos/${id}`,{
@@ -56,10 +55,9 @@
         <%- include("header.ejs") %> 
         <form action="/todos" method="post">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-           <!-- when our form gets submiited csrf token also gets submitted -->
             <div class="flex gap-2 py-4">
                 <div class="flex-auto">
-                    <input type="text" name="title" placeholder="What's next" class="border border-gray-300 rounded text-gray-900 w-full p-2 text-sm" required />
+                    <input type="text" name="title" class="border border-gray-300 rounded text-gray-900 w-full p-2 text-sm" required />
                 </div>
             <div class="flex-auto">
                 <input type="date" name="dueDate" class="border border-gray-300 rounded text-gray-900 w-full p-2 text-sm leading-4 " required/>
@@ -69,10 +67,10 @@
             </div>  
             </div>
         </form>
-        <%- include('todos.ejs', {title: "Overdue", data: overdue}) %>
-        <%- include('todos.ejs', {title: "Due Today", data: dueToday}) %>
-        <%- include('todos.ejs', {title: "Due Later", data: dueLater}) %>
-        <%- include('todos.ejs', {title: "Completed Items", data: completedItemsIs}) %>
+        <%- include('todos.ejs', {title: "Overdue", data: overdue}) %><br/>
+        <%- include('todos.ejs', {title: "Due Today", data: dueToday}) %><br>
+        <%- include('todos.ejs', {title: "Due Later", data: dueLater}) %><br>
+        <%- include('todos.ejs', {title: "Completed Items", data: completedItems}) %><br>
     </div>
 </div>
     </body>
